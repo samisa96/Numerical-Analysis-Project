@@ -1,6 +1,9 @@
-from sympy import *
+from math import *
 import cmath
+from sympy import *
 import numpy as np
+import matplotlib.pyplot as plt
+
 def func(symbolic_fuction):
     return lambdify(x, symbolic_fuction, 'numpy')
 
@@ -39,7 +42,6 @@ def Print_roots(printList):
         print("number iteration:", i[1])
         print("Approximation:", i[0])
 
-
 def all_roots(fx, eps, rangex, itration):
     roots = []
     intervals = find_roots(rangex)
@@ -68,8 +70,37 @@ def all_roots(fx, eps, rangex, itration):
         return None
     return roots
 
+def plot_it(start, end, function, methodName):
+    '''
+    :param start: Start of interval
+    :type start: float
+    :param end: End of interval
+    :type end: float
+    :param function: function
+    :type function: lambda
+    :param methodName: Method name - for the Title
+    :type methodName: string
+    '''
+    # Data for plotting
+    t = np.arange(start, end, 0.01)
+    s = function(t)
+
+    fig, ax = plt.subplots()
+    ax.plot(t, s)
+
+    ax.set(xlabel='X', ylabel='Y',
+        title = methodName)
+    ax.grid()
+
+    fig.savefig("test.png")
+    plt.show()
+
 if __name__ == '__main__':
     x = Symbol('x')
     gx = exp(2*(x**2)-3*x)-4+cos(x**3+3)
     fx = func(gx)
-    print(all_roots(fx, 0.0001, [-1,3], 100))
+    rang = [-1,3]
+    print(all_roots(fx, 0.0001, rang, 100))
+
+    #plot the function:
+    plot_it(rang[0],rang.pop(),fx, "Secant Method")
