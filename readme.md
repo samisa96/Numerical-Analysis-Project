@@ -22,8 +22,6 @@ After Python installion, open cmd / Terminal and navigate to project folder and 
 python pip install -r install.txt
 ```
 
-Here you should say what actually happens when you execute the code above.
-
 Project Structure
 ------------------
 The tree below displays the files and folders structure:
