@@ -1,6 +1,9 @@
-from sympy import *
 import cmath
+from math import *
+from sympy import *
+import scipy as sp
 import numpy as np
+import matplotlib.pyplot as plt
 
 def func(symbolic_fuction):
     return lambdify(x, symbolic_fuction, 'numpy')
@@ -17,7 +20,6 @@ def find_roots(rangex):
         j = j + 0.05
 
     return intervals
-
 
 def NR(f, f_tag, x,eps, itration,printList):
     i=0
@@ -43,7 +45,6 @@ def Print_roots(printList):
     for i in printList:
         print("number iteration:", i[1])
         print("Approximation:", i[0])
-
 
 def all_roots(f, f_tag, eps, rangex, itration):
     roots = []
@@ -72,6 +73,30 @@ def all_roots(f, f_tag, eps, rangex, itration):
     roots.sort()
     return roots
 
+def plot_it(start, end, function, methodName):
+    '''
+    :param start: Start of interval
+    :type start: float
+    :param end: End of interval
+    :type end: float
+    :param function: function
+    :type function: lambda
+    :param methodName: Method name - for the Title
+    :type methodName: string
+    '''
+    # Data for plotting
+    t = np.arange(start, end, 0.00001)
+    s = function(t)
+
+    fig, ax = plt.subplots()
+    ax.plot(t, s)
+
+    ax.set(xlabel='X', ylabel='Y',
+        title = methodName)
+    ax.grid()
+
+    fig.savefig("test.png")
+    plt.show()
 
 
 if __name__ == '__main__':
@@ -81,3 +106,6 @@ if __name__ == '__main__':
     print(fx(0))
     fx_tag = derivative(gx)
     print(all_roots(fx, fx_tag, 0.00001, [-1,3], 100))
+
+    #Plot the function
+    plot_it(-1, 3, fx, "Newton Rephson")
