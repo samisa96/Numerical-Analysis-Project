@@ -1,8 +1,8 @@
+from math import *
 from sympy import *
 import scipy as sp
 import numpy as np
-
-# import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 def f(symbolic_fuction):
     '''
@@ -130,6 +130,33 @@ def intervals(Start_Domain, End_Domain, interval_jump):
     domains.append(End_Domain)
     return domains
 
+def plot_it(start, end, function, jumps, methodName):
+    '''
+    :param start: Start of interval
+    :type start: float
+    :param end: End of interval
+    :type end: float
+    :param function: function
+    :type function: lambda
+    :param jumps: intervals jumps
+    :type jumps: float
+    :param methodName: Method name - for the Title
+    :type methodName: string
+    '''
+    # Data for plotting
+    t = np.arange(start, end, jumps)
+    s = function(t)
+
+    fig, ax = plt.subplots()
+    ax.plot(t, s)
+
+    ax.set(xlabel='X', ylabel='Y',
+        title = methodName)
+    ax.grid()
+
+    fig.savefig("test.png")
+    plt.show()
+
 if __name__ == '__main__':
     x = Symbol('x')
     epsilon = 0.00000001
@@ -144,17 +171,16 @@ if __name__ == '__main__':
     fx_tag = derivative(fx)
     fx = tmp1
 
-
     count = 0
     rootList = []
     ranging = intervals(Start_Domain, End_Domain, interval_jump )
 
-
     #List of roots
-
     rootList = all_roots(ranging, fx, fx_tag, iteration, epsilon)
     rootList = set(rootList)
     rootList = list(rootList)
     rootList.sort()
     print(rootList)
 
+    #Plot the function
+    plot_it(Start_Domain, End_Domain, fx, interval_jump, "Bisection")
