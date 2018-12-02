@@ -1,4 +1,4 @@
-# Numerical_Analysis_Project
+# Numerical-Analysis-Project
 
 This project will allow you to perform calculations for different functions so that you can find their different roots.
 The project uses several methods of calculation:
@@ -8,8 +8,12 @@ The project uses several methods of calculation:
 3. Secant method.
 
 ## Getting Started
+#### Prerequisites
 
-A quick introduction of the minimal setup you need to get a hello world up & running.
+A work environment that supports Python3, like Pycharm, VS code etc.
+_____________________
+
+A quick introduction of the minimal setup you need to get a "Numerical-Analysis-Project" up & running:
 ```
 git@github.com:yariv1025/Numerical_Analysis_Project.git
 ```
@@ -20,19 +24,30 @@ python pip install -r install.txt
 
 Here you should say what actually happens when you execute the code above.
 
-#### Prerequisites
+Project Structure
+------------------
+The tree below displays the files and folders structure:
+```
+├── Docs                            #NOTE
+|  |── DFD / Use-Case               #NOTE
+|  ├── Summery                      #NOTE
+|  └── ...  
+├── Lib
+|   ├── Bisection_method.py         #NOTE
+|   ├── GaussSiedle_SOR.py          #NOTE
+|   ├── NewtonRephson_method        #NOTE
+|   ├── plot_it.py                  #NOTE
+|   ├── Secant_method.py            #NOTE
+|   └── ... 
+├── readme.md                       #NOTE
+├── install.txt                     #NOTE
+└── .gitignore                      #NOTE
 
-A work environment that supports Python3, like Pycharm, VS code etc.
-
-
+```
 Built With
 ----------
 * [Pycharm](https://www.jetbrains.com/pycharm/) -Python IDE.
 * [Scipy, Sympy, Numpy, Matplotlib](https://www.scipy.org/) -Python-based ecosystem software for mathematics, science, and engineering.
-
-Configuration
--------------
-Here you should write what are all of the configurations a user can enter when using the project.
 
 Authors
 -------
