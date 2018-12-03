@@ -128,8 +128,7 @@ def create_U(matrix):
 
 def normMax(mat):
     '''
-    :param matrixList: matrix
-    :param size: Size of matrix
+    :param mat: matrix
     :return: Max Norm
     '''
     sum = 0
