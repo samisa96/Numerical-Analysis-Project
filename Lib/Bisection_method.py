@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 
 def f(symbolic_fuction):
     '''
-
     :param symbolic_fuction: mathematical expression
     :return: mathematical function
     '''
@@ -130,7 +129,7 @@ def intervals(Start_Domain, End_Domain, interval_jump):
     domains.append(End_Domain)
     return domains
 
-def plot_it(start, end, function, jumps, methodName):
+def plot_it(start, end, function, methodName):
     '''
     :param start: Start of interval
     :type start: float
@@ -144,7 +143,7 @@ def plot_it(start, end, function, jumps, methodName):
     :type methodName: string
     '''
     # Data for plotting
-    t = np.arange(start, end, jumps)
+    t = np.arange(start, end, 0.001)
     s = function(t)
 
     fig, ax = plt.subplots()
@@ -182,5 +181,6 @@ if __name__ == '__main__':
     rootList.sort()
     print(rootList)
 
-    #Plot the function
-    plot_it(Start_Domain, End_Domain, fx, interval_jump, "Bisection")
+    # Plot the function
+    ux = lambda z: np.cos(z) + np.log(z) + np.exp(z)
+    plot_it(Start_Domain, End_Domain, ux, "Bisection")
