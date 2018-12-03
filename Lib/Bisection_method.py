@@ -163,8 +163,10 @@ if __name__ == '__main__':
     Start_Domain = -10
     End_Domain = 10
     interval_jump = 0.5
+
     # fx=ln(x**2-2*x)+cos(x**3-1)+exp(2*(x**2)-3*x+4) syntx example
     # fx = (sin(x)+(ln(x)*cos(x))) example of syntx writing
+
     fx = ln(x**2-2*x)+cos(x**3-1)+exp(2*(x**2)-3*x+4)
     tmp1 = f(fx)
     fx_tag = derivative(fx)
