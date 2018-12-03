@@ -1,5 +1,5 @@
-from Bisection.py import *
-from N_R import *
+from Bisection_method.py import *
+from NewtonRephson.py import *
 from math import sqrt
 
 def Find_Rij(point_i,point_j,h):
