@@ -1,11 +1,15 @@
-# Numerical-Analysis-Project
+# User-Guide : Numerical-Analysis-Project
 
-This project will allow you to perform calculations for different functions so that you can find their different roots.
-The project uses several methods of calculation:
-
+This project will allow the user to approximate roots of functions using several methods and to approximate results of matrix.
+All roots approxmiates methods will be backup with graphs.
+#### Roots approximation methods:
 1. The Bisection method.
 2. Newton raphson method
 3. Secant method.
+
+#### Matrix approximation methods:
+1. Gauss Siedle
+2. SOR - Successive Over Relaxation
 
 ## Getting Started
 #### Prerequisites
@@ -13,9 +17,10 @@ The project uses several methods of calculation:
 A work environment that supports Python3, like Pycharm, VS code etc.
 _____________________
 
-A quick introduction of the minimal setup you need to get a "Numerical-Analysis-Project" up & running:
+A quick introduction of the minimal setup you need to get a "Numerical-Analysis-Project" up & running.
+Open folder for this project and clone this repository use follow command:
 ```
-git@github.com:yariv1025/Numerical_Analysis_Project.git
+git@github.com:yariv1025/Numerical-Analysis-Project.git
 ```
 After Python installion, open cmd / Terminal and navigate to project folder and run the follow command:
 ```
