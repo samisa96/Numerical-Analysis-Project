@@ -103,4 +103,4 @@ if __name__ == '__main__':
     print(all_roots(fx, 0.0001, rang, 100))
 
     #plot the function:
-    plot_it(rang[0],rang.pop(),fx, "Secant Method")
+    plot_it(-1,3,fx, "Secant Method")
