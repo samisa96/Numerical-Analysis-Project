@@ -101,7 +101,7 @@ def plot_it(start, end, function, methodName):
 
 if __name__ == '__main__':
     x = Symbol('x')
-    gx = exp(2*(x**2)-3*x)-4
+    gx = exp(2*(x**2)-3*x)-4+cos(x**3+3)
     fx = func(gx)
     print(fx(0))
     fx_tag = derivative(gx)
