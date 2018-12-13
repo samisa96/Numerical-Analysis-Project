@@ -31,20 +31,22 @@ Project Structure
 ------------------
 The tree below displays the files and folders structure:
 ```
-├── Docs                            #NOTE
-|  |── DFD / Use-Case               #NOTE
-|  ├── Summery                      #NOTE
-|  └── ...  
-├── Lib
-|   ├── Bisection_method.py         #NOTE
-|   ├── GaussSiedle_SOR.py          #NOTE
-|   ├── NewtonRephson_method        #NOTE
-|   ├── plot_it.py                  #NOTE
-|   ├── Secant_method.py            #NOTE
-|   └── ... 
-├── readme.md                       #NOTE
-├── install.txt                     #NOTE
-└── .gitignore                      #NOTE
+├── Docs                            # Documents of project:
+|  |── Diagrams                     # Contain all relevant DFD's
+|  ├── Summery                      # Short summery of the methods
+|  └── Final summery                # Hackathon - final summery  
+├── Lib                             # All methods files - Python
+|   ├── Bisection_method.py
+|   ├── GaussSiedle_SOR.py
+|   ├── NewtonRephson_method
+|   ├── plot_it.py
+|   ├── Hackathon.py
+|   ├── Poly_aprox.py
+|   ├── Main.py
+|   └── Secant_method.py
+├── readme.md                       # User guide
+├── install.txt                     # text file for installation
+└── .gitignore                      # Files we ignored
 
 ```
 Built With
