@@ -94,13 +94,3 @@ def plot_it(start, end, function, methodName):
 
     fig.savefig("test.png")
     plt.show()
-
-if __name__ == '__main__':
-    x = Symbol('x')
-    gx = exp(2*(x**2)-3*x)-4+cos(x**3+3)
-    fx = func(gx)
-    rang = [-1,3]
-    print(all_roots(fx, 0.0001, rang, 100))
-
-    #plot the function:
-    plot_it(-1,3,fx, "Secant Method")

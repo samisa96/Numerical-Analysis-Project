@@ -64,7 +64,8 @@ def derivative(symbolic_fuction):
     :return: derivative of symbolic function as a function
     '''
     f_tag = diff(symbolic_fuction)
-    return lambdify(x, f_tag, 'numpy')
+    x = Symbol('x')
+    return lambdify(x, f_tag)
 
 def roots(ranging, function, iteration, epsilon):
     '''
@@ -156,33 +157,3 @@ def plot_it(start, end, function, methodName):
     fig.savefig("test.png")
     plt.show()
 
-if __name__ == '__main__':
-    x = Symbol('x')
-    epsilon = 0.00000001
-    iteration = 100
-    Start_Domain = -10
-    End_Domain = 10
-    interval_jump = 0.5
-
-    # fx=ln(x**2-2*x)+cos(x**3-1)+exp(2*(x**2)-3*x+4) syntx example
-    # fx = (sin(x)+(ln(x)*cos(x))) example of syntx writing
-
-    fx = ln(x**2-2*x)+cos(x**3-1)+exp(2*(x**2)-3*x+4)
-    tmp1 = f(fx)
-    fx_tag = derivative(fx)
-    fx = tmp1
-
-    count = 0
-    rootList = []
-    ranging = intervals(Start_Domain, End_Domain, interval_jump )
-
-    #List of roots
-    rootList = all_roots(ranging, fx, fx_tag, iteration, epsilon)
-    rootList = set(rootList)
-    rootList = list(rootList)
-    rootList.sort()
-    print(rootList)
-
-    # Plot the function
-    ux = lambda z: np.cos(z) + np.log(z) + np.exp(z)
-    plot_it(Start_Domain, End_Domain, ux, "Bisection")

@@ -8,3 +8,4 @@ def Calculate_Dij(c,k,u,h,point_i,point_j):
     return (c*(1+k*h)*exp(-u*Distance_Rij(point_i,point_j,h)))/(Distance_Rij(point_i,point_j,h)**2)
 def Find_c(func):
     roots1=
+

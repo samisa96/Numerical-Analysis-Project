@@ -1,4 +1,5 @@
 import numpy as np
+from numpy import array
 
 
 def iterative(matrix, b, c, printList):
@@ -98,7 +99,7 @@ def create_D(matrix):
         m = []
         for j in range(len(matrix)):
             if i == j:
-                m.append(matrix.item(i, j))
+                m.append(float(matrix.item(i, j)))
             else:
                 m.append(0.0)
         result.append(m)
@@ -111,7 +112,7 @@ def create_L(matrix):
         m = []
         for j in range(len(matrix)):
             if i > j:
-                m.append(matrix.item(i, j))
+                m.append(float(matrix.item(i, j)))
             else:
                 m.append(0.0)
         result.append(m)
@@ -124,7 +125,7 @@ def create_U(matrix):
         m = []
         for j in range(len(matrix)):
             if i < j:
-                m.append(matrix.item(i, j))
+                m.append(float(matrix.item(i, j)))
             else:
                 m.append(0.0)
         result.append(m)
@@ -186,7 +187,7 @@ def SOR(matrix, b):
     return r
 
 def PrintList(printList):
-    for i in range(0 ,len(printList), 4):
+    for i in range(0 ,len(printList)-1, 4):
         print("number iteration:", printList[i])
         for j in range(1 , 4):
             print("x", j, ": ", printList[i + j])
@@ -246,24 +247,3 @@ def calcDominant(mat):
         newOrder = list(range(len(mat)))
         found = False
     return mat
-
-
-if __name__ == '__main__':
-    a = np.matrix([[2, 7, 4], [10, 2, -5], [3, 4, 9]])
-    b = [-7, 3, -3.5]
-
-    norm_A = normMax(a)
-    try:
-        A_inv = a.I
-        norm_A_inv = normMax(A_inv)
-        cond = norm_A * norm_A_inv
-        print("cond: ", cond)
-
-    except(np.linalg.LinAlgError):
-        print("no inverse")
-
-    a = calcDominant(a)
-    print(a)
-
-    print(SOR(a, b))
-    #print(gaus(a, b))

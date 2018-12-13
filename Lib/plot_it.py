@@ -27,9 +27,3 @@ def plot_it(start, end, function, methodName):#A function used for drawing graph
 
     fig.savefig("test.png")
     plt.show()
-
-if "__main__" == __name__:
-
-    func = lambda x:np.log(x**2)-np.cos(x)+np.sin((x**2)-4)
-    #func = lambda x: np.log(x**2-2*x)-np.cos(x+3)
-    plot_it(-10,10,func, "METHOD NAME")
