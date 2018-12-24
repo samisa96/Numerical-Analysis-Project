@@ -1,3 +1,5 @@
+![alt text](https://i.imgur.com/ZNpFSo2.png)
+
 # User-Guide : Numerical-Analysis-Project
 
 This project will allow the user to approximate roots of functions using several methods and to approximate results of matrix.
