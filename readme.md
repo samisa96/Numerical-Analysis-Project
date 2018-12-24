@@ -69,4 +69,7 @@ License
 -------
 This project is licensed under the SCE License - see the [License.md](https://gist.github.com/Numerical_Analysis_Project/LICENSE.md) file for  details.
 
+Acknowledgments
+---------------
+* [matplotlib](https://matplotlib.org/gallery/lines_bars_and_markers/simple_plot.html) - We used matplotlib code to export a graph for given function.
 ## END
