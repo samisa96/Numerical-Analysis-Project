@@ -40,7 +40,7 @@ The tree below displays the files and folders structure:
 |   ├── GaussSiedle_SOR.py
 |   ├── NewtonRephson_method
 |   ├── plot_it.py
-|   ├── Hackathon.py
+|   ├── Hackathon.py                # Unnecessary
 |   ├── Poly_aprox.py
 |   ├── Main.py
 |   └── Secant_method.py
