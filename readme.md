@@ -9,9 +9,20 @@ All roots approxmiates methods will be backup with graphs.
 2. Newton raphson method
 3. Secant method.
 
+#### Approximation methods:
+1. Poly aprox
+2. LaGrange
+3. Neville
+4. Cubic Spline
+
 #### Matrix approximation methods:
 1. Gauss Siedle
 2. SOR - Successive Over Relaxation
+
+#### Integrals approximation methods:
+1. Romberg
+2. Simpson
+3. Trapezoid
 
 ## Getting Started
 #### Prerequisites
