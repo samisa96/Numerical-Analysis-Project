@@ -157,3 +157,31 @@ def plot_it(start, end, function, methodName):
     fig.savefig("test.png")
     plt.show()
 
+def input_datas(ranging, fx, fx_tag, iteration, epsilon):
+    rootList = all_roots(ranging, fx, fx_tag, iteration, epsilon)
+    rootList = set(rootList)
+    rootList = list(rootList)
+    rootList.sort()
+    return rootList
+
+if __name__ == '__main__':
+    x = Symbol('x')
+    epsilon = 0.00000001
+    iteration = 100
+    Start_Domain = -3
+    End_Domain = 3
+    interval_jump = 0.1
+    #--------examples of functions-----------
+    #fx=ln(x**2-2*x)+cos(x**3-1)+exp(2*(x**2)-3*x+4)
+    fx = cos(x**2+4)
+    #fx = x*exp(-x)-0.25
+    assginment_func = f(fx)
+    fx_tag = derivative(fx)
+    fx = assginment_func
+
+    rootList = []
+    ranging = intervals(Start_Domain, End_Domain, interval_jump )
+
+    #List of roots
+    print(input_datas(ranging, fx, fx_tag, iteration, epsilon))
+    plot_it(0, 1, fx, "Function")
