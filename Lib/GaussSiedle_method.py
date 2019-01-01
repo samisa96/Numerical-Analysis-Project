@@ -209,16 +209,22 @@ def dominant(mat, b):
     return mat, b
 
 if __name__ == "__main__":
+    # Example:
     mat = np.matrix([[1, 3, 5], [1, 4, 2], [5, 2, 9]])
     b = [1, 2, 3]
+    # Example:
     '''mat = np.matrix([[2, 3, 5], [1, 5, 2], [7, 2, 3]])
     b = [1, 2, -2]'''
+    # Example:
     '''mat = np.matrix([[1, 3, 5], [6, 5, 2], [7, 1, 3]])
     b = [1, 3, -2]'''
+    # Example:
     '''mat = np.matrix([[1, 3, 5], [1, 1, 2], [3, 2, 3]])
     b = [1, 2, -2]'''
+    # Example:
     '''mat = np.matrix([[1, 1, 1], [2, 1, 2], [4, 2, 3]])
     b = [1, 2, -2]'''
+    # Example:
     '''mat = np.matrix([[1, 0, 1], [2, 1, 2], [4, 2, 3]])
     b = [1, 2, -2]'''
 
