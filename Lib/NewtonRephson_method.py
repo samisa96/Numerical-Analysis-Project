@@ -12,7 +12,7 @@ def derivative(symbolic_fuction):
     g_tagx = diff(symbolic_fuction)
     return lambdify(x, g_tagx, 'numpy')
 
-def find_roots(rangex):
+def slice(rangex):
     intervals = []
     j = rangex[0]
     while j <= rangex[1]:
@@ -48,7 +48,7 @@ def Print_roots(printList):
 
 def all_roots(f, f_tag, eps, rangex, itration):
     roots = []
-    intervals = find_roots(rangex)
+    intervals = slice(rangex)
     for i in intervals:
         printList=[]
         x = (i[0] + i[1]) / 2
@@ -97,3 +97,29 @@ def plot_it(start, end, function, methodName):
 
     fig.savefig("test.png")
     plt.show()
+
+
+if '__main__' == __name__:
+
+    x = Symbol('x')
+###########################################################
+############# Write down the function: ####################
+###########################################################
+    fx = cos(x**2 + 4)
+    #sin(x**2 + 4)
+    #sin(x) + (ln(x)* cos(x))
+    #x * exp(-x) - 0.25
+###########################################################
+    tmp = func(fx)
+    xtag = derivative(fx)
+    fx = tmp
+###########################################################
+############# Write down the parameters: ##################
+###########################################################
+    range = [-3, 3]
+    epsilon = 0.001
+    iteration = 100
+###########################################################
+    roots = all_roots(tmp, xtag, epsilon, range, iteration)
+    plot_it(-10, 10, tmp, 'Newton Rephson')
+    print(roots)
