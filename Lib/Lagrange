@@ -1,6 +1,5 @@
 import numpy as np
 from sympy import *
-from pypoly import Polynomial
 
 def chunkIt(seq, num):
     avg = len(seq) / float(num)
@@ -47,6 +46,18 @@ def Lagrange(x,X):
         list2.append(T[0][i]*T[1][i])
     return sum(list2)
 
-x, X = 0.35, [[0.2,0.198669],[0.3,0.295520],[0.4,0.389418],[0.5, 0.479426]]
+#x - The point that we place in the function
+#X- POINTS
+#(1) x, X = 0.35, [[2,-14],[1,-4],[0,0]]
+#(2) x,X=1.5,[[5,2],[3,6],[-1,4]]
+#(3) x,X=1.5,[[-7,2],[1,8.8],[-0.2,0.7]]
+#(4) x,X=0.5,[[0,2],[1.5,6],[-5,4],[2,2]]
+#(5) x,X=0.5,[[0,2],[1.5,6],[-5,4],[2,2],[5,5]]
+x,X=0.5,[[0,2],[1.5,6],[-5,4],[2,2]]
 
-printLagrange(X)
+print(Lagrange(x,X))
+#(1) - result - -0.71749
+#(2) - result - 6.8125
+#(3) - result - 12.9125
+#(4) - result - 5.3780
+#(5) - result - 6.37225
