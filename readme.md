@@ -44,6 +44,12 @@ The tree below displays the files and folders structure:
 |   ├── plot_it.py
 |   ├── Hackathon.py                # Unnecessary
 |   ├── Poly_aprox.py
+|   ├── CubicSpline_method.py
+|   ├── LaGrange_method.py
+|   ├── Neville_method.py
+|   ├── Romberg_method.py
+|   ├── Simpson_method.py
+|   ├── Trapezoid_method.py
 |   ├── Main.py
 |   └── Secant_method.py
 ├── readme.md                       # User guide
