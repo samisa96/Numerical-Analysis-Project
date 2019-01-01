@@ -1,5 +1,3 @@
-from math import *
-import cmath
 from sympy import *
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,8 +9,8 @@ def find_roots(rangex):
     intervals = []
     j = rangex[0]
     for _ in range((abs(rangex[1])+abs(rangex[0])) * 2):
-        intervals.append([j, j + 0.5])
-        j = j + 0.5
+        intervals.append([j, j + 0.1])
+        j = j + 0.1
     return intervals
 
 def checkVariable(root, roots, eps):
@@ -68,19 +66,11 @@ def all_roots(fx, eps, rangex, itration):
                     Print_roots(printList)
     if len(roots) == 0:
         return None
+    roots.sort()
     return roots
 
 def plot_it(start, end, function, methodName):
-    '''
-    :param start: Start of interval
-    :type start: float
-    :param end: End of interval
-    :type end: float
-    :param function: function
-    :type function: lambda
-    :param methodName: Method name - for the Title
-    :type methodName: string
-    '''
+    
     # Data for plotting
     t = np.arange(start, end, 0.01)
     s = function(t)
@@ -94,3 +84,31 @@ def plot_it(start, end, function, methodName):
 
     fig.savefig("test.png")
     plt.show()
+
+
+if __name__ == '__main__':
+    x = Symbol('x')
+
+    '''gx = x*exp(-x)-0.25
+    fx = func(gx)
+    print(all_roots(fx, 0.0001, [-1, 3], 100))
+     plot_it(-10, 10, fx, 'asf') '''
+
+    '''gx = sin(x) + ln(x) * cos(x)
+    fx = func(gx)
+    print(all_roots(fx, 0.0001, [-10, 10], 100))
+    plot_it(-10, 10, fx, 'asf')'''
+
+    '''gx = sin(x**2 + 4)
+    fx = func(gx)
+    print(all_roots(fx, 0.0001, [-10, 10], 100))
+    plot_it(-10, 10, fx, 'asf') '''
+
+    '''gx = cos(x ** 2 + 4)
+    fx = func(gx)
+    print(all_roots(fx, 0.0001, [-5, 5], 100))
+    plot_it(-10, 10, fx, 'asf') '''
+
+    '''gx = ln(x**2-2*x)+cos(x**3-1)+exp(2*(x**2)-3*x+4)
+    fx = func(gx)
+    print(all_roots(fx, 0.0001, [-1, 3], 100))'''
