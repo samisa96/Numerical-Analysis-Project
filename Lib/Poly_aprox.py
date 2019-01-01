@@ -41,19 +41,24 @@ def calcDominant(mat,b):
         found=False
     return mat,b
 
-def polynomial_approx(x, y):
+def polynomial_approx(vector_x, vector_y, x):
     mat = []
     row = []
-    for j in range(len(x)):
-        for i in range(len(x)):
-            z = lambda y : y ** (len(x) -i - 1)
-            row.append(z(x[j]))
+    sum = 0
+    for j in range(len(vector_x)):
+        for i in range(len(vector_x)):
+            z = lambda vector_y : vector_y ** (len(vector_x) -i - 1)
+            row.append(z(vector_x[j]))
         mat.append(row)
         row = []
     mat = np.matrix(mat)
-    mat,y= dominant(mat,y)
-    y = gs.gaus(mat, y)
-    return y
+    mat,vector_y= dominant(mat,vector_y)
+    coefficients = gs.gaus(mat, vector_y)
+    print('The possession of the polynomial is :', len(coefficients))
+    for i in range(len(coefficients)):
+        print('Coefficient for x^',len(coefficients) - 1 - i,'is : ', coefficients[i])
+        sum += coefficients[i] * (x ** (len(coefficients) - 1 - i))
+    return sum
 
 def polynomial_calc(p, num, pow):
     sum = 0
@@ -72,8 +77,14 @@ def dominant(mat, b):
     return mat, b
 
 if __name__ == "__main__":
-    x = [2,1,0]
-    b = [-14, -4, 0]
+    #vector x = [-7,1,-0.2]
+    #vector y = [2,8.8, 0.7]
+    # example result 12.91241
 
-    r = polynomial_approx(x, b)
+    #vector_x = [0,1.5,-5,2,5]
+    #vector_y = [2,6,4,2,5]
+    #example result 6.3722
+    x = [0,1.5,-5,2,5]
+    y = [2,6,4,2,5]
+    r = polynomial_approx(x, y,0.5)
     print(r)
