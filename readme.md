@@ -11,18 +11,22 @@ All roots approxmiates methods will be backup with graphs.
 
 #### Approximation methods:
 1. Poly aprox
-2. LaGrange
-3. Neville
-4. Cubic Spline
+2. Linear aprox
+3. LaGrange
+4. Neville
+5. Cubic Spline
 
 #### Matrix approximation methods:
 1. Gauss Siedle
-2. SOR - Successive Over Relaxation
+2. Gauss elimination
+3. Jacobi
+4. SOR - Successive Over Relaxation
 
 #### Integrals approximation methods:
 1. Romberg
 2. Simpson
 3. Trapezoid
+4. Gaussian Quadrature
 
 ## Getting Started
 #### Prerequisites
@@ -55,13 +59,18 @@ The tree below displays the files and folders structure:
 |   ├── plot_it.py
 |   ├── Hackathon.py                # Unnecessary
 |   ├── Poly_aprox.py
+|   ├── Linear aprox.py
 |   ├── CubicSpline_method.py
-|   ├── LaGrange_method.py
+|   ├── LaGrange_method.py          #Unnecessary
+|   ├── Lagrange
 |   ├── Neville_method.py
 |   ├── Romberg_method.py
 |   ├── Simpson_method.py
 |   ├── Trapezoid_method.py
+|   ├── Gauss elimination.py
+|   ├── Jacobi.py
 |   ├── Main.py
+|   ├── Gaussian Quadrature.py
 |   └── Secant_method.py
 ├── readme.md                       # User guide
 ├── install.txt                     # text file for installation
