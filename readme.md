@@ -37,11 +37,12 @@ A work environment that supports Python3, like Pycharm, VS code etc.
 _____________________
 
 A quick introduction of the minimal setup you need to get a "Numerical-Analysis-Project" up & running.
-Open folder for this project and clone this repository use follow command:
+Open folder for this project and clone this repository.
+Use the following command:
 ```
 git@github.com:yariv1025/Numerical-Analysis-Project.git
 ```
-After Python installion, open cmd / Terminal and navigate to project folder and run the follow command:
+After Python installion, open cmd / Terminal, navigate to project folder and run the following command:
 ```
 python pip install -r install.txt
 ```
