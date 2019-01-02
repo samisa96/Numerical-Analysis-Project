@@ -2,8 +2,10 @@
 
 # User-Guide : Numerical-Analysis-Project
 
-This project will allow the user to approximate roots of functions using several methods and to approximate results of matrix.
-All roots approxmiates methods will be backup with graphs.
+This project will allow the user to approximate roots of functions using several methods
+and to approximate results of matrix.
+Some of the "roots approxmiates methods" will be backup with graphs.
+
 #### Roots approximation methods:
 1. The Bisection method.
 2. Newton raphson method
@@ -61,7 +63,7 @@ The tree below displays the files and folders structure:
 |   ├── Poly_aprox.py
 |   ├── Linear aprox.py
 |   ├── CubicSpline_method.py
-|   ├── LaGrange_method.py          #Unnecessary
+|   ├── LaGrange_method.py          # Unnecessary
 |   ├── Lagrange
 |   ├── Neville_method.py
 |   ├── Romberg_method.py
@@ -77,6 +79,8 @@ The tree below displays the files and folders structure:
 └── .gitignore                      # Files we ignored
 
 ```
+*Some methods include ready-to-run examples.
+
 Built With
 ----------
 * [Pycharm](https://www.jetbrains.com/pycharm/) -Python IDE.
@@ -89,7 +93,10 @@ Students in the software engineering department at SCE - Sami Shamoon College:
 * [Yariv Garala](https://github.com/yariv1025)
 * [Almog Machlof](https://github.com/Almogma)
 * [Elad Metudi]()
-* [Tom Zeiger]()
+* [Tom Zeiger](https://github.com/TomZaiger)
+* [Shirel Biton](https://github.com/shirelBiton)
+* [Liz Ohayon](https://github.com/lizohayon)
+* [Yakir Kobaivanov](https://github.com/yakirk1)
 
 See also the list of [contributors](https://github.com/yariv1025/Numerical_Analysis_Project/graphs/contributors) who participated in this project
 
