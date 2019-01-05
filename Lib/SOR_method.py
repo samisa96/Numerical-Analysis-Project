@@ -130,10 +130,10 @@ def create_U(matrix):
     U = np.matrix(result)
     return U
 
-def PrintList(printList):
-    for i in range(0 ,len(printList)-1, 4):
+def PrintList(printList, size):
+    for i in range(0 ,len(printList)-1, size):
         print("number iteration:", printList[i])
-        for j in range(1 , 4):
+        for j in range(1 , size):
             print("x", j, ": ", printList[i + j])
 
 
@@ -181,7 +181,7 @@ def SOR(matrix, b):
             w = w + 0.05
         else:
             flag = 1
-            PrintList(printList)
+            PrintList(printList, len(r) + 1)
 
     return r
 
