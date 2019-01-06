@@ -140,15 +140,14 @@ def PrintList(printList, size):
 def SOR(matrix, b):
     flag = 0
     w = 0.05
+    D = create_D(matrix)
+    L = create_L(matrix)
+    U = create_U(matrix)
     while flag == 0 and w <= 2:
         printList = []
-        D = create_D(matrix)
-        L = create_L(matrix)
-        U = create_U(matrix)
 
         W_L = multi_scalar(L, w)
         D_WL = sum_m(W_L, D)
-
         W_D = multi_scalar(D, 1 - w)
         W_U = multi_scalar(U, w)
 
@@ -156,7 +155,6 @@ def SOR(matrix, b):
         for i in range(len(b)):
             new_b.append(b[i] * w)
         result = []
-
         for i in range(len(matrix)):
             m = []
             for j in range(0, i):
@@ -181,8 +179,18 @@ def SOR(matrix, b):
             w = w + 0.05
         else:
             flag = 1
+            print("Convergence is carried out for w = ",w)
+            print("The calculate of the Vector results is running by the formula - (D+wL)Xr+1=[(1-w)D-wU]Xr+wb")
+            print("Matrix D\n", D)
+            print("Matrix L\n", L)
+            print("Matrix U\n", U)
+            print("Matrix D+wL\n", D_WL)
+            print("Matrix (1-w)D\n", W_D)
+            print("Matrix wU\n", W_U)
+            print("Vector wb\n", new_b)
+            print("The final Matrix\n",mat)
             PrintList(printList, len(r) + 1)
-
+            print("The Vector results is - ")
     return r
 
 def StrongcalcDominant(mat):
