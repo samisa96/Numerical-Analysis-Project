@@ -56,24 +56,26 @@ The tree below displays the files and folders structure:
 |  └── Final summery                # Hackathon - final summery  
 ├── Lib                             # All methods files - Python
 |   ├── Bisection_method.py
-|   ├── GaussSiedle_SOR.py
+|   ├── CubicSpline_method.py
+|   ├── GaussSiedle_method.py
+|   ├── GaussSiedle_SOR.py          # Unused!
+|   ├── Hackathon.py                # Unused!
+|   ├── Jacobi_method.py
+|   ├── Lagrange                    # Unused!
+|   ├── LaGrange_method.py 
+|   ├── Linear aprox.py
+|   ├── Main.py
+|   ├── MatrixInversion_method.py
+|   ├── Neville_method.py
 |   ├── NewtonRephson_method
 |   ├── plot_it.py
-|   ├── Hackathon.py                # Unnecessary
-|   ├── Poly_aprox.py
-|   ├── Linear aprox.py
-|   ├── CubicSpline_method.py
-|   ├── LaGrange_method.py          # Unnecessary
-|   ├── Lagrange
-|   ├── Neville_method.py
+|   ├── Poly_aprox.py   
 |   ├── Romberg_method.py
+|   ├── Secant_method.py
 |   ├── Simpson_method.py
+|   ├── SOR_method.py
 |   ├── Trapezoid_method.py
-|   ├── Gauss elimination.py
-|   ├── Jacobi.py
-|   ├── Main.py
-|   ├── Gaussian Quadrature.py
-|   └── Secant_method.py
+|   └── Gaussian Quadrature.py
 ├── readme.md                       # User guide
 ├── install.txt                     # text file for installation
 └── .gitignore                      # Files we ignored
