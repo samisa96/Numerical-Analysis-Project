@@ -18,9 +18,11 @@ def find_intervals(a, b, N):
 
 # trapezoidal rule
 def trapezoid(f,a,b,N):
+    print("The formula of Trapezoidal is - sigma(from i=1 to N)*(h/2)*(f(Xi-h)+f(Xi))")
     yi=[]
     h = (b-a)/N
     xi = find_intervals(a,b,N)
+    print("The intervals are -\n",xi)
     for i in xi:
         yi.append(f(i))
     yi = np.asarray(yi)
@@ -30,8 +32,8 @@ def trapezoid(f,a,b,N):
             s = s + yi[i]
             print("number iteration:",i)
             print("Approximation:",s)
-
     s = (h/2)*(yi[0] + yi[N]) + h*s
+    print("The result is - ")
     return s
 
 
