@@ -155,7 +155,16 @@ def jacobi(matrix, b):
 
     printList = []
     r = iterative(L_U_D_1, new_b ,L_D_b, printList)
+    print("The calculate of the Vector results is running by the formula - Xr+1=-D^-1(L+U)Xr+D^-1*b")
+    print("Matrix D\n", D)
+    print("Matrix L\n", L)
+    print("Matrix U\n", U)
+    print("Matrix -D^-1\n", D_minus_1)
+    print("Matrix L+U\n", L_U)
+    print("Matrix -D^-1*(L+U)\n", L_U_D_1)
+    print("Vector D^-1*b\n", L_D_b)
     PrintList(printList, len(r) + 1)
+    print("The Vector results is - ")
     return r
 
 def StrongcalcDominant(mat):
