@@ -154,6 +154,7 @@ def jacobi(matrix, b):
     L_D_b = L_D_b.getA()[0]
 
     printList = []
+    print("Jaccobi Method")
     print("The calculate of the Vector results is running by the formula - Xr+1=-D^-1(L+U)Xr+D^-1*b")
     r = iterative(L_U_D_1, new_b ,L_D_b, printList)
     print("Matrix D\n", D)
