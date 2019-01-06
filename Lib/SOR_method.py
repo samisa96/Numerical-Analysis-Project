@@ -1,5 +1,4 @@
 import numpy as np
-
 def iterative(matrix, b, c, printList):
     result = []
     sum = 0
@@ -10,7 +9,6 @@ def iterative(matrix, b, c, printList):
 
     for i in range(len(matrix)):
         result.append(0)
-
     while(flag2 == 0 and count <= 100):
         for i in range(len(matrix)):
             for j in range(len(matrix)):
@@ -138,6 +136,7 @@ def PrintList(printList, size):
 
 
 def SOR(matrix, b):
+    emptyL=[0 for i in b]
     flag = 0
     w = 0.05
     D = create_D(matrix)
@@ -179,8 +178,10 @@ def SOR(matrix, b):
             w = w + 0.05
         else:
             flag = 1
+            print("SOR Method")
             print("Convergence is carried out for w = ",w)
             print("The calculate of the Vector results is running by the formula - (D+wL)Xr+1=[(1-w)D-wU]Xr+wb")
+            print("The initial guess is - ", emptyL)
             print("Matrix D\n", D)
             print("Matrix L\n", L)
             print("Matrix U\n", U)
@@ -259,5 +260,4 @@ if __name__ == "__main__":
     r = dominant(mat, b)
     mat = r[0]
     b = r[1]
-
     print(SOR(mat, b))
