@@ -28,8 +28,11 @@ def trapezoid(f,a,b,N):
     for i in range(1,N):
         if yi[i] != inf and yi[i] != -inf:
             s = s + yi[i]
-            print("number iteration:",i)
+            print("number iteration of trapezoid method:",i)
             print("Approximation:",s)
+        else:
+            print("The Approximation of the number iteration",i,"of trapezoid method is -inf or inf")
+
 
     s = (h/2)*(yi[0] + yi[N]) + h*s
     return s
@@ -43,20 +46,26 @@ def romberg(f,a,b,eps,nmax):
     Q = np.zeros((nmax,nmax),float)
     converged = 0
     k=0
+    count=1
+    print("Romberg method is using trapezoid method -  ")
+    print("The formula of Trapezoidal is - sigma(from i=1 to N)*(h/2)*(f(Xi-h)+f(Xi))")
+    print("The formula of Romberg Method is - R(n,m)=1/(4^m-1)*(4^m*R(n,m-1)-R*(n-1,m-1))")
     for i in range(0,nmax):
         N = 2**i
         Q[i,0] = trapezoid(f,a,b,N)
         for k in range(0,i):
             n = k + 2
             Q[i,k+1] = 1.0/(4**(n-1)-1)*(4**(n-1)*Q[i,k] - Q[i-1,k])
-            print("number iteration:",k)
+            print("number iteration of romberg method:",count)
             print("Approximation:",Q[i,k])
+            count+=1
         if (i > 0):
             if (abs(Q[i,k+1] - Q[i,k]) < eps):
                converged = 1
                break
     if nmax == 1:
         return Q[i,k],k
+    print("The result is -")
     return Q[i,k + 1],k
 
 
