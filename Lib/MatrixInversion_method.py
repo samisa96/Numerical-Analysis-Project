@@ -28,16 +28,20 @@ def getMatrixDeternminant(m):
        print("not square matrix")
        return
 
+
 def getMatrixInverse(m):
   determinant = getMatrixDeternminant(m)
-  if determinant!=None:
+  if determinant==0:
+      print("the deternminant of the matrix is 0 so there's no inverse matrix")
+      return
+  if determinant!=None and determinant!=0:
      print("the deternminant of the matrix is {} so there's inverse matrix:".format(determinant))
      #special case for 2x2 matrix:
      if len(m) == 2:
-        return [[m[1][1]/determinant, -1*m[0][1]/determinant],
+         return [[m[1][1]/determinant, -1*m[0][1]/determinant],
                 [-1*m[1][0]/determinant, m[0][0]/determinant]]
 
-#find matrix of cofactors
+    #find matrix of cofactors
      cofactors = []
      for r in range(len(m)):
         cofactorRow = []
@@ -46,17 +50,21 @@ def getMatrixInverse(m):
             cofactorRow.append(((-1)**(r+c)) * getMatrixDeternminant(minor))
         cofactors.append(cofactorRow)
      cofactors = transposeMatrix(cofactors)
+     sum=0
      for r in range(len(cofactors)):
         for c in range(len(cofactors)):
             if determinant !=0:
+              sum += 1
               cofactors[r][c] = cofactors[r][c]/determinant
+              print("iteration number {}".format(sum))
+              print(cofactors)
+
             else:
               return'inversion matrix doesnt exist'
+     print("the inverse matrix is:")
      return cofactors
   else:
-     return
+     return None
 
-
-  '''
-m=[[5,2,1,0],[0,1,2,0],[0,3,1,0],[0,0,0,1]]
-print(getMatrixInverse(m))  '''
+m=[[0,0,0],[3,0,5],[1,4,0]]
+print(getMatrixInverse(m))
