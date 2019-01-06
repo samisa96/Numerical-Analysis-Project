@@ -31,7 +31,12 @@ def secant(rangex, fx, x0, x1, eps, itration,printList):
     while abs(x1 - x0) > eps or itration == 0:
         if abs(fx(x1) - fx(x0)) < eps:
             return None
+        print('     first guess: ', x0)
+        print('     second guess: ', x1)
         x = x1 - fx(x1) * ((x1 - x0)/(fx(x1) - fx(x0)))
+        print('     the next first guess: ', x1)
+        print('     the next second guess: ', x, '\n')
+
         printList.append((x,i))
         i += 1
         x0 = x1
@@ -42,22 +47,31 @@ def secant(rangex, fx, x0, x1, eps, itration,printList):
 def Print_roots(printList):
     for i in printList:
         print("number iteration:", i[1])
-        print("Approximation:", i[0])
+        print("Approximation:", i[0], '\n')
 
 def all_roots(fx, eps, rangex, itration):
+    j = 1
+    print("***********************************************************")
+    print("** Secant Formula is: X(r+1) = Xr - F(x) / F'(x) **")
+    print("***********************************************************",'\n')
     roots = []
     intervals = find_intervals(rangex)
     for i in intervals:
         printList=[]
         x0 = (i[0] + i[1]) / 3
         x1 = (i[0] + i[1]) / 2
+        print("Interval number", j, "is: ", i, "\n")
+        j += 1
         root = secant(rangex, fx, x0, x1, eps, itration,printList)
 
         if root != None:
             if(len(roots)==0):
                 if root >= rangex[0] and root <= rangex[1] and checkRoot(fx, root, eps):
                     roots.append(root)
-                    Print_roots(printList)
+                    print("*****************************************")
+                    print("ROOT IS: [", root, ']')
+                    print("*****************************************\n")
+                    #Print_roots(printList)
             else:
                 if root == None:
                     continue
@@ -67,10 +81,14 @@ def all_roots(fx, eps, rangex, itration):
                     continue
                 elif root <= rangex[1] and root >= rangex[0] and checkRoot(fx, root, eps):
                     roots.append(root)
-                    Print_roots(printList)
+                    print("*****************************************")
+                    print("ROOT IS: [", root, ']')
+                    print("*****************************************\n")
+                    #Print_roots(printList)
     if len(roots) == 0:
         return None
     roots.sort()
+    print("The root list is: ", roots)
     return roots
 
 def plot_it(start, end, function, methodName):
@@ -95,24 +113,25 @@ if __name__ == '__main__':
 
     gx = x*exp(-x)-0.25
     fx = func(gx)
-    print(all_roots(fx, 0.0001, [-1, 3], 100))
+    all_roots(fx, 0.0001, [-1, 3], 100)
     plot_it(-10, 10, fx, 'Secant')
 
     '''gx = sin(x) + ln(x) * cos(x)
     fx = func(gx)
-    print(all_roots(fx, 0.0001, [-10, 10], 100))
-    plot_it(-10, 10, fx, 'asf')'''
+    all_roots(fx, 0.0001, [-10, 10], 100)
+    plot_it(-10, 10, fx, 'Secant')'''
 
     '''gx = sin(x**2 + 4)
     fx = func(gx)
-    print(all_roots(fx, 0.0001, [-10, 10], 100))
-    plot_it(-10, 10, fx, 'asf') '''
+    all_roots(fx, 0.0001, [-10, 10], 100)
+    plot_it(-10, 10, fx, 'Secant') '''
 
     '''gx = cos(x ** 2 + 4)
     fx = func(gx)
-    print(all_roots(fx, 0.0001, [-5, 5], 100))
-    plot_it(-10, 10, fx, 'asf') '''
+    all_roots(fx, 0.0001, [-5, 5], 100)
+    plot_it(-10, 10, fx, 'Secant') '''
 
     '''gx = ln(x**2-2*x)+cos(x**3-1)+exp(2*(x**2)-3*x+4)
     fx = func(gx)
-    print(all_roots(fx, 0.0001, [-1, 3], 100))'''
+    all_roots(fx, 0.0001, [-1, 3], 100)
+    plot_it(-10, 10, fx, 'Secant') '''
