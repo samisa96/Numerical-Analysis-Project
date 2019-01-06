@@ -155,7 +155,15 @@ def gaus(matrix, b):
 
     printList = []
     r = iterative(L_D_U_1, new_b ,L_D_b, printList)
+    print("The calculate of the Vector results is running by the formula - Xr+1=-(L+D)^-1*U*Xr+(L+D)^-1*b")
+    print("Matrix D\n", D)
+    print("Matrix L\n", L)
+    print("Matrix U\n", U)
+    print("Matrix -(L+D)^-1\n", L_D_INVERSE)
+    print("Matrix -(L+D)^-1*U\n", L_D_U_1)
+    print("Vector (L+D)^-1*b\n",L_D_b)
     PrintList(printList)
+    print("The Vector results is - ")
     return r
 
 
