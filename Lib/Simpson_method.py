@@ -6,17 +6,9 @@ from sympy import *
 def f_sym(symbolic_fuction):
     return lambdify(x, symbolic_fuction)
 
-def find_intervals(a, b, N):
-    jump = (b - a)/N
-    intervals = []
-    j = a
-    for i in range(N + 1):
-        intervals.append(j)
-        j = j + jump
-    return np.array(intervals)
-
-
 def simpson_method(f, a, b, n):
+    print("Simpson method")
+    print("Simpson method is going by the formula - (h/3)*(f(a)+2*sigma(from j=1 to (n/2)-1)*f(X2j)+4*sigma(from j=1 to (n/2))*f(X2j-1)+f(b))")
     if(n%2!=0):
         return 'n must be even'
     h=(b-a)/n
