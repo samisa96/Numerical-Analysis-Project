@@ -1,7 +1,10 @@
 def init_poly(x, x_value, y_value, index):
+    print("P",index[0],index[1],"(x)= (",y_value[index[1]],"*( X - ",x_value[index[0]],") - ",y_value[index[0]],"*( X -",x_value[index[1]],"))/(",(x_value[index[1]]-x_value[index[0]]),")")
     return (y_value[index[1]] * (x - x_value[index[0]]) - y_value[index[0]] * (x - x_value[index[1]])) / (x_value[index[1]] - x_value[index[0]])
 
 def poly_at_index(x, x_value, poly_index, index):
+    print("P", index[0], index[1], "(x)= (", y_value[index[1]], "*( X - ", x_value[index[0]], ") - ", y_value[index[0]],
+          "*( X -", x_value[index[1]], "))/(", (x_value[index[1]] - x_value[index[0]]), ")")
     return (poly_index[1] * (x - x_value[index[0]]) - poly_index[0] * (x - x_value[index[1]])) / (x_value[index[1]] - x_value[index[0]])
 
 def nevil(x, x_value, y_value):
@@ -36,9 +39,13 @@ def nevil(x, x_value, y_value):
     for i in dic:
         if dic[i] < m:
             index = i
-
+    print("Results for P[i][i+1] at x =",x,"are:")
     print(polyindex)
+    print()
+    print("The minimum difference between P[i][j], P[i][j-1] and P[i+1][j]:")
     print(dic)
+    print()
+    print("Final approximation for x values",x_value,",y values",y_value,"at x =",x," is:")
     print(polyindex[index])
 
 if '__main__' == __name__:

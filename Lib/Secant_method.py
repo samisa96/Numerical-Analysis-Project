@@ -5,13 +5,17 @@ import matplotlib.pyplot as plt
 def func(symbolic_fuction):
     return lambdify(x, symbolic_fuction, 'numpy')
 
-def find_roots(rangex):
-    intervals = []
-    j = rangex[0]
-    for _ in range((abs(rangex[1])+abs(rangex[0])) * 2):
-        intervals.append([j, j + 0.1])
-        j = j + 0.1
-    return intervals
+def find_intervals(rangex):
+    jumps = 0.1
+    domains = []
+    parameter = rangex[0]
+
+    tmp = (rangex[1] - rangex[0]) / jumps
+    for i in range(int(tmp)):
+        domains.append([parameter, parameter+jumps])
+        parameter += jumps
+
+    return domains
 
 def checkVariable(root, roots, eps):
     for i in roots:
@@ -42,7 +46,7 @@ def Print_roots(printList):
 
 def all_roots(fx, eps, rangex, itration):
     roots = []
-    intervals = find_roots(rangex)
+    intervals = find_intervals(rangex)
     for i in intervals:
         printList=[]
         x0 = (i[0] + i[1]) / 3
@@ -89,10 +93,10 @@ def plot_it(start, end, function, methodName):
 if __name__ == '__main__':
     x = Symbol('x')
 
-    '''gx = x*exp(-x)-0.25
+    gx = x*exp(-x)-0.25
     fx = func(gx)
     print(all_roots(fx, 0.0001, [-1, 3], 100))
-     plot_it(-10, 10, fx, 'asf') '''
+    plot_it(-10, 10, fx, 'Secant')
 
     '''gx = sin(x) + ln(x) * cos(x)
     fx = func(gx)

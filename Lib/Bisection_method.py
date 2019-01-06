@@ -190,8 +190,8 @@ if __name__ == '__main__':
     interval_jump = 0.1
     #--------examples of functions-----------
     #fx=ln(x**2-2*x)+cos(x**3-1)+exp(2*(x**2)-3*x+4)
-    fx = cos(x**2+4)
-    #fx = x*exp(-x)-0.25
+    #fx = cos(x**2+4)
+    fx = x*exp(-x)-0.25
     assginment_func = f(fx)
     fx_tag = derivative(fx)
     fx = assginment_func

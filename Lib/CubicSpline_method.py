@@ -1,5 +1,5 @@
 import numpy as np
-import SOR_method
+import SOR_method as sor
 
 def newLine(points, l, i):
     l[i-1] = 1/6 *(points[i][0] - points[i - 1][0])
@@ -46,6 +46,8 @@ def natural_spline(points, x,ftag0=1,ftagN=1):
         b[i] = create_b(points, i)
 
     mylist = np.matrix(mylist)
+    print("Spline Matrix is:\n")
+    print(mylist)
     result = sor.SOR(mylist, b)
     print()
     for i in range(len(points) - 1):
@@ -76,6 +78,8 @@ def spline(points, x,ftag0,ftagN):
     b[len(b)-1]=ftagN-(points[len(points)-1][1]-points[len(points)-2][1])/(points[len(points)-1][0]-points[len(points)-2][0])
 
     mylist = np.matrix(mylist)
+    print("Spline Matrix is:\n")
+    print(mylist)
     result = sor.SOR(mylist, b)
     print()
     for i in range(len(points) - 1):
@@ -84,6 +88,7 @@ def spline(points, x,ftag0,ftagN):
     print("X is in:")
     return create_Si(points, result, int(x) - 1, x)
 
-
-#print(natural_spline([(1,1), (2, 2), (3, 1), (4,1.5), (5,1)], 3))
-print(spline([(1,1), (2, 2), (3, 1), (4,1.5), (5,1)], 2.5,5,5))
+points=[(1,1), (2, 2), (3, 1), (4,1.5), (5,1)]
+x=3
+print("Final result for points",x,"at value x=",x,"is:" ,natural_spline(points, x))
+#print("Final result for points",points,"at value x =",x,"is:" ,spline(points, x,0,0))

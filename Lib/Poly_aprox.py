@@ -1,5 +1,5 @@
 import numpy as np
-import SOR as gs
+import SOR_method as sor
 
 
 def StrongcalcDominant(mat):
@@ -52,12 +52,19 @@ def polynomial_approx(vector_x, vector_y, x):
         mat.append(row)
         row = []
     mat = np.matrix(mat)
+    print("Matrix of coefficients:\n",mat)
     mat,vector_y= dominant(mat,vector_y)
-    coefficients = gs.gaus(mat, vector_y)
-    print('The possession of the polynomial is :', len(coefficients))
+
+    coefficients = sor.SOR(mat, vector_y)
     for i in range(len(coefficients)):
-        print('Coefficient for x^',len(coefficients) - 1 - i,'is : ', coefficients[i])
         sum += coefficients[i] * (x ** (len(coefficients) - 1 - i))
+    print("\nApproximated polynomial is:")
+    print("f(x) = ",end="")
+    for i in range(len(coefficients)):
+        if(i!=len(coefficients) -1):
+            print(coefficients[i],"*","x^",len(coefficients) - 1 - i,"+",end="")
+        else:
+            print(coefficients[i], "*", "x^", len(coefficients) - 1 - i, end="")
     return sum
 
 def polynomial_calc(p, num, pow):
@@ -79,12 +86,13 @@ def dominant(mat, b):
 if __name__ == "__main__":
     #vector x = [-7,1,-0.2]
     #vector y = [2,8.8, 0.7]
-    # example result 12.91241
+    # example result 12.91241 for x=1.5
 
     #vector_x = [0,1.5,-5,2,5]
     #vector_y = [2,6,4,2,5]
     #example result 6.3722
-    x = [0,1.5,-5,2,5]
-    y = [2,6,4,2,5]
-    r = polynomial_approx(x, y,0.5)
-    print(r)
+    x=[-7, 1, -0.2]
+    y=[2,8.8, 0.7]
+    value=1.5
+    r = polynomial_approx(x, y,value)
+    print("\n\nFinal result of the approximated polynomial at value x =",value," is:",r)
