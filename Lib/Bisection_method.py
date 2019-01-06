@@ -33,6 +33,7 @@ def bisection(a, b, iteration, function, epsilon):
             if function(a) * function(b) <= 0 :
                 c = (a + b) / 2
                 while(abs(b - a) > epsilon or iteration == 0 ) :
+                    print("Iteration number : ", i)
                     if(function(a) == 0):
                         return a
                     if(function(b) == 0):
@@ -41,12 +42,16 @@ def bisection(a, b, iteration, function, epsilon):
                         return c
                     elif(function(a) * function(c) > 0):
                         a = c
+                        print("Next a =", c)
                     elif(function(c) * function(b) > 0):
                         b = c
+                        print("Next b =", c)
                     iteration = iteration - 1
                     c = (a + b) / 2
-                    print("number iteration:", i)
-                    print("Approximation:", c)
+                    print("(a, b) -> (", a,",", b, ")",'\n')
+                    #print("(", a, "+", b, ") / 2 =", c)
+                    if abs(b - a) <= epsilon :
+                        print("Approximated root is :", c)
                     i += 1
                 return c
             else:
@@ -99,8 +104,18 @@ def all_roots(ranging, fx, fx_tag, iteration, epsilon):
     fx_tag_list = []
     root_list = []
     merged_list = []
+
+    print("***********************************************")
+    print("** Bisection Formula is: root = (a + b) / 2  **")
+    print("***********************************************")
+
     fx_list = roots(ranging, fx, iteration, epsilon)
     fx_tag_list = roots(ranging, fx_tag, iteration, epsilon)
+    print("****************************************")
+    print("**The final steps for the last result:**")
+    print("****************************************", '\n')
+    print("1) Root list of f(x) before the comparison with f'(x) root list: ",fx_list,'\n')
+    print("2) Roots of f'(x) are:", fx_tag_list,'\n')
     almostE = 0.00001
 
     for i in fx_tag_list:
@@ -116,6 +131,7 @@ def all_roots(ranging, fx, fx_tag, iteration, epsilon):
 
     for i in merged_list:
         fx_list += i
+    print("3) The final root list of f(x) is: ", fx_list)
     return fx_list
 
 def intervals(Start_Domain, End_Domain, interval_jump):
@@ -159,6 +175,7 @@ def plot_it(start, end, function, methodName):
 
 def input_datas(ranging, fx, fx_tag, iteration, epsilon):
     rootList = all_roots(ranging, fx, fx_tag, iteration, epsilon)
+    print("")
     rootList = set(rootList)
     rootList = list(rootList)
     rootList.sort()
@@ -183,5 +200,5 @@ if __name__ == '__main__':
     ranging = intervals(Start_Domain, End_Domain, interval_jump )
 
     #List of roots
-    print(input_datas(ranging, fx, fx_tag, iteration, epsilon))
-    plot_it(0, 1, fx, "Function")
+    input_datas(ranging, fx, fx_tag, iteration, epsilon)
+    plot_it(0, 1, fx, "Bisection")
