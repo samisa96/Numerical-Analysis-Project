@@ -111,10 +111,10 @@ def plot_it(start, end, function, methodName):
 if __name__ == '__main__':
     x = Symbol('x')
 
-    gx = x*exp(-x)-0.25
+    '''gx = x*exp(-x)-0.25
     fx = func(gx)
     all_roots(fx, 0.0001, [-1, 3], 100)
-    plot_it(-10, 10, fx, 'Secant')
+    plot_it(-10, 10, fx, 'Secant')'''
 
     '''gx = sin(x) + ln(x) * cos(x)
     fx = func(gx)
