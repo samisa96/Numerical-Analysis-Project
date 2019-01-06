@@ -10,7 +10,7 @@ def iterative(matrix, b, c, printList):
 
     for i in range(len(matrix)):
         result.append(0)
-
+    print("The initial guess is - ", result)
     while(flag2 == 0 and count <= 100):
         for i in range(len(matrix)):
             for j in range(len(matrix)):
@@ -154,8 +154,9 @@ def gaus(matrix, b):
     L_D_b = L_D_b.getA()[0]
 
     printList = []
-    r = iterative(L_D_U_1, new_b ,L_D_b, printList)
+    print("Gaus Sidel Method")
     print("The calculate of the Vector results is running by the formula - Xr+1=-(L+D)^-1*U*Xr+(L+D)^-1*b")
+    r = iterative(L_D_U_1, new_b ,L_D_b, printList)
     print("Matrix D\n", D)
     print("Matrix L\n", L)
     print("Matrix U\n", U)
