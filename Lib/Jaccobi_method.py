@@ -10,7 +10,7 @@ def iterative(matrix, b, c, printList):
 
     for i in range(len(matrix)):
         result.append(0)
-
+    print("The initial guess is - ",result)
     while(flag2 == 0 and count <= 100):
         for i in range(len(matrix)):
             for j in range(len(matrix)):
@@ -154,8 +154,8 @@ def jacobi(matrix, b):
     L_D_b = L_D_b.getA()[0]
 
     printList = []
-    r = iterative(L_U_D_1, new_b ,L_D_b, printList)
     print("The calculate of the Vector results is running by the formula - Xr+1=-D^-1(L+U)Xr+D^-1*b")
+    r = iterative(L_U_D_1, new_b ,L_D_b, printList)
     print("Matrix D\n", D)
     print("Matrix L\n", L)
     print("Matrix U\n", U)
