@@ -102,10 +102,6 @@ Students in the software engineering department at SCE - Sami Shamoon College:
 
 See also the list of [contributors](https://github.com/yariv1025/Numerical_Analysis_Project/graphs/contributors) who participated in this project
 
-License
--------
-This project is licensed under the SCE License - see the [License.md](https://gist.github.com/Numerical_Analysis_Project/LICENSE.md) file for  details.
-
 Acknowledgments
 ---------------
 * [matplotlib](https://matplotlib.org/gallery/lines_bars_and_markers/simple_plot.html) - We used matplotlib code to export a graph for given function.
